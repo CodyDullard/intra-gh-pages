@@ -7,12 +7,19 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "react": "^17.0.1",
+<<<<<<< HEAD
     "react-data-table": "^0.1.0",
+=======
+    "react-data-table-component": "^6.11.6",
+>>>>>>> f5b6668a942105386e92ead7f932155fd32bb86b
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "styled-components": "^5.2.1",
+<<<<<<< HEAD
     "typescript": "^4.1.3",
+=======
+>>>>>>> f5b6668a942105386e92ead7f932155fd32bb86b
     "web-vitals": "^0.2.4"
   },
   "scripts": {

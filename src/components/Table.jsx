@@ -1,127 +1,111 @@
-export default class SortingVisualizer extends React.Component {
-    constructor(props) {
-        super(props);
+import { Component, React } from 'react';
+import DataTable from 'react-data-table-component';
 
-        this.state = {
-            array: [],
-        };
+const loggedStudent = "test1"
+
+const data = [
+    {
+        company: "Google",
+        job_title: "SWE Intern",
+        courses: "EC / CASE",
+        final_date: "19-01-2021",
+        description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget commodo libero. Mauris congue consectetur vulputate. Maecenas magna dui, ultrices id fringilla ut, pulvinar eget ex. Aenean eu urna neque. Maecenas quis diam eu elit maximus consectetur eget et sem. Vivamus in purus dignissim, pharetra magna ut, vehicula urna. Pellentesque non bibendum nisl. Donec volutpat ornare eros id commodo. Cras ut venenatis massa, imperdiet pellentesque magna. ",
+        applied_students: ["test1"]
+    },
+    {
+        company: "Amazon",
+        job_title: "SDE Intern",
+        courses: "EC / CASE",
+        final_date: "15-03-2021",
+        description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget commodo libero. Mauris congue consectetur vulputate. Maecenas magna dui, ultrices id fringilla ut, pulvinar eget ex. Aenean eu urna neque. Maecenas quis diam eu elit maximus consectetur eget et sem. Vivamus in purus dignissim, pharetra magna ut, vehicula urna. Pellentesque non bibendum nisl. Donec volutpat ornare eros id commodo. Cras ut venenatis massa, imperdiet pellentesque magna. ",
+        applied_students: ["test2", "test3"]
+    },
+    {
+        company: "Demonware",
+        job_title: "SRE Intern",
+        courses: "CASE",
+        final_date: "10-12-2020",
+        description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget commodo libero. Mauris congue consectetur vulputate. Maecenas magna dui, ultrices id fringilla ut, pulvinar eget ex. Aenean eu urna neque. Maecenas quis diam eu elit maximus consectetur eget et sem. Vivamus in purus dignissim, pharetra magna ut, vehicula urna. Pellentesque non bibendum nisl. Donec volutpat ornare eros id commodo. Cras ut venenatis massa, imperdiet pellentesque magna. ",
+        applied_students: ["test3"]
+    }]
+
+const columns = [
+    {
+        name: "Company",
+        selector: "company",
+        sortable: false
+    },
+    {
+        name: "Job Title",
+        selector: "job_title",
+        sortable: false
+    },
+    {
+        name: "Courses",
+        selector: "courses",
+        sortable: false
+    },
+    {
+        name: "Final Date",
+        selector: "final_date",
+        sortable: false
     }
+]
+const ExpandableComponent = ({ data }) => data.description;
 
-    componentDidMount() {
-        this.resetArray();
-    }
+var now = Date.now()
+console.log(now)
 
-    genArray() {
-        for(let gens = randomIntBetween(2, 5); gens < 6; gens++) {
-            this.resetArray();
+const conditionalRowStyles = [
+    {
+        when: row => toTime(row.final_date) < now,
+        style: {
+            backgroundColor: "rgb(255, 0, 0)",
+            color: "white"
+        }
+    },
+    {
+        when: row => applied(row.applied_students),
+        style: {
+            backgroundColor: "rgb(0, 255, 0)",
+            color: "white"
         }
     }
+]
 
-    resetArray() {
-        const array = [];
-        for(let i = 0; i < 100; i++) {
-            array.push(randomIntBetween(1,100));
-        }
-        this.setState({array});
-        for(let j = 0; j < arrayBars.length;j++) {
-            arrayBars[j].style.backgroundColor = "darkblue";
-        }
-    }
-
-    mergeSort() {
-        const animations = getMergeSortAnimations(this.state.array);
-        const arrayBars = document.getElementsByClassName('array-bar');
-        for (let i = 0; i < animations.length; i++) {
-          const isColorChange = i % 3 !== 2;
-          if (isColorChange) {
-            const [barOneIdx, barTwoIdx] = animations[i];
-            const barOneStyle = arrayBars[barOneIdx].style;
-            const barTwoStyle = arrayBars[barTwoIdx].style;
-            const color = i % 3 === 0 ? SECONDARY_COLOR : PRIMARY_COLOUR;
-            setTimeout(() => {
-              barOneStyle.backgroundColor = color;
-              barTwoStyle.backgroundColor = color;
-            }, i * ANIMATION_SPEED_MS);
-          } else {
-            setTimeout(() => {
-              const [barOneIdx, newHeight] = animations[i];
-              const barOneStyle = arrayBars[barOneIdx].style;
-              barOneStyle.height = `${newHeight * 0.99}%`;
-            }, i * ANIMATION_SPEED_MS);
-          }
-        }
-        console.log(this.state.array);
-        console.log(arrayBars);
-      }
-    
-    insertionSort() {
-        insertionSortAnimations(this.state.array);
-        makeGraphGreen();
-        resetDelay();
-    }
-
-    selectionSort() {
-        selectionSortAnimations(this.state.array, arrayBars);
-        resetDelay();
-    }
-    quickSort() {
-        quickSortAnimations(this.state.array, 0, this.state.array.length - 1);
-        makeGraphGreen();
-        resetDelay();
-    }
-    heapSort() {
-        heapSortAnimations(this.state.array);
-        resetDelay();
-    }
-
-    // NOTE: This method will only work if your sorting algorithms actually return
-    // the sorted arrays; if they return the animations (as they currently do), then
-    // this method will be broken.
-    testSortingAlgorithms() {
-        for (let i = 0; i < 100; i++) {
-        const array = [];
-        const length = randomIntBetween(1, 1000);
-        for (let i = 0; i < length; i++) {
-            array.push(randomIntBetween(-1000, 1000));
-        }
-        const javaScriptSortedArray = array.slice().sort((a, b) => a - b);
-        const ourSortedArray = heapSortAnimations(array.slice(), 0, array.length - 1);
-        const equal = arraysAreEqual(javaScriptSortedArray, ourSortedArray);
-        console.log(equal);
-        // if(equal === true) {
-        //     console.log(equal);
-        //     }
-        // else {
-        //     console.log(javaScriptSortedArray, ourSortedArray);
-        // }
-        }
-    }
-
+export default class Table extends Component {
     render() {
-        const {array} = this.state;
-        
         return (
-            <div className="Vis-container">
-                <div className="button-container">
-                    <button className="button" onClick={() => this.genArray()}>Generate New Array</button>
-                    <button className="button" onClick={() => this.mergeSort()}>Merge Sort</button>
-                    <button className="button" onClick={() => this.insertionSort()}>Insertion Sort</button>
-                    <button className="button" onClick={() => this.selectionSort()}>Selection Sort</button>
-                    <button className="button" onClick={() => this.quickSort()}>Quick Sort</button>
-                    <button className="button" onClick={() => this.heapSort()}>Heap Sort</button>
-                </div>
-                <div className="array-container">
-                    {array.map((value, idx) => (
-                        <div 
-                        className="array-bar" 
-                        key={idx}
-                        style={{height: `${value * 0.99}%`}} ></div>
-                    ))}
-                </div>
-                {/* <div className="error-warning">
-                    <h3>There is currently a bug when generating a new array so press the button twice and it will work.</h3>
-                </div> */}
-            </div>
-        );
+            <div class="job-table" aria-label="Job Table" >
+                <DataTable
+                title="Jobs"
+                columns={columns}
+                data={data}
+                keyField="company"
+                expandableRows
+                highlightOnHover
+                expandableRowsHideExpander
+                expandOnRowClicked
+                defaultSortField="company"
+                expandableRowsComponent={<ExpandableComponent />}
+                conditionalRowStyles={conditionalRowStyles}
+            />
+          </div>
+        )
     }
+    };
+
+function toTime(d) {
+    console.log(d.split("-"))
+    return new Date(d.split("-")).getTime()
+}
+
+function applied(students) {
+    let student;
+    for(student of students) {
+        if(student === loggedStudent) {
+            return true
+        }
+    }
+    return false
 }
