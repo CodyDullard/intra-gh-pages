@@ -51,7 +51,7 @@ const columns = [
         sortable: false
     }
 ]
-const ExpandableComponent = ({ data }) => data.description;
+const ExpandableComponent = ({ data }) => <p >{ data.description }</p>;
 
 var now = Date.now()
 console.log(now)
@@ -60,15 +60,15 @@ const conditionalRowStyles = [
     {
         when: row => toTime(row.final_date) < now,
         style: {
-            backgroundColor: "rgb(255, 0, 0)",
+            backgroundColor: "rgb(225, 0, 0)",
             color: "white"
         }
     },
     {
         when: row => applied(row.applied_students),
         style: {
-            backgroundColor: "rgb(0, 255, 0)",
-            color: "white"
+            backgroundColor: "rgb(100, 200, 100)",
+            color: "black"
         }
     }
 ]
@@ -76,21 +76,18 @@ const conditionalRowStyles = [
 export default class Table extends Component {
     render() {
         return (
-            <div class="job-table" aria-label="Job Table" >
-                <DataTable
-                title="Jobs"
-                columns={columns}
-                data={data}
-                keyField="company"
-                expandableRows
-                highlightOnHover
-                expandableRowsHideExpander
-                expandOnRowClicked
-                defaultSortField="company"
-                expandableRowsComponent={<ExpandableComponent />}
-                conditionalRowStyles={conditionalRowStyles}
-            />
-          </div>
+            <DataTable
+            title="Jobs"
+            columns={columns}
+            data={data}
+            keyField="company"
+            expandableRows
+            highlightOnHover
+            expandOnRowClicked
+            defaultSortField="company"
+            expandableRowsComponent={<ExpandableComponent />}
+            conditionalRowStyles={conditionalRowStyles}
+        />
         )
     }
     };
