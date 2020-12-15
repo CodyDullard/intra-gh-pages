@@ -1,0 +1,35 @@
+body {
+    background-color: #272727;
+}
+
+h2, label {
+    color: #FFE400;
+}
+
+#job-display{
+    width: 80%;
+    display: table;
+    margin: auto;
+}
+
+input {
+    width: 80%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    background-color: #313131;
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    transition: 0.2s ease-out;
+    display: block;
+    margin: auto;
+}
+
+input:focus {
+    background-color: white;
+    color: #313131;
+    outline: white solid 1px;
+    border: #272727;
+}
