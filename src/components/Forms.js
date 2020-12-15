@@ -4,7 +4,7 @@ import DataTable from 'react-data-table-component';
 const loggedStudent = "test1"
 let text = "No data to display"
 
-class MyForm extends React.Component{ 
+export default class CompanyForm extends React.Component{ 
   constructor(props){ 
     super(props) 
     this.state = { company:'', title:'', location:'', description:'',extra:null, courses: "", enddate:"", submitted: false} 
@@ -187,5 +187,3 @@ function applied(students) {
   }
   return false
 }
-
-export default MyForm
