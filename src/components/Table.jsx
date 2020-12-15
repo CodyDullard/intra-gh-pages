@@ -60,14 +60,14 @@ const conditionalRowStyles = [
     {
         when: row => toTime(row.final_date) < now,
         style: {
-            backgroundColor: "rgb(225, 0, 0)",
-            color: "white"
+            backgroundColor: "#FF652F",
+            color: "black"
         }
     },
     {
         when: row => applied(row.applied_students),
         style: {
-            backgroundColor: "rgb(100, 200, 100)",
+            backgroundColor: "#14A76C",
             color: "black"
         }
     }
@@ -87,6 +87,7 @@ export default class Table extends Component {
             defaultSortField="company"
             expandableRowsComponent={<ExpandableComponent />}
             conditionalRowStyles={conditionalRowStyles}
+            theme="dark"
         />
         )
     }
