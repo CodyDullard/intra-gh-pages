@@ -6,63 +6,59 @@ const loggedStudent = "test1"
 export default class CvViewer extends Component {
     render() {
         const cvData = data
+        const skillList = data.skills.map((element) =>
+            <li>{ element }</li>
+        );
+        const projectBody = data.projects.map((element) =>
+            <tr>
+                <td>{ element.name }</td>
+                <td>{ element.details }</td>
+                <td>{ element.technology }</td>
+            </tr>
+        );
+        const experienceBody = data.experience.map((element) =>
+            <tr>
+                <td>{ element.company }</td>
+                <td>{ element.duration }</td>
+                <td>{ element.details }</td>
+            </tr>
+        );
         return (
             <div>
                 <h1>Curriculum Vitae</h1>
                 <h2>{ cvData.name }</h2>
                 <ul>
-                    <li>{ cvData.dob }</li>
-                    <li>{ cvData.email }</li>
-                    <li>{ cvData.phoneNumber }</li>
+                    <li>Date of Birth:&nbsp;&nbsp;&nbsp;&nbsp;{ cvData.dob }</li>
+                    <li>Email:&nbsp;&nbsp;&nbsp;&nbsp;{ cvData.email }</li>
+                    <li>Phone:&nbsp;&nbsp;&nbsp;&nbsp;{ cvData.phoneNumber }</li>
                 </ul>
-                <ul>
-                    <li>{ cvData.address.streetAddress }</li>
-                    <li>{ cvData.address.city }</li>
-                    <li>{ cvData.address.County }</li>
-                </ul>
+                <h2>Address</h2>
+                    <address>
+                        <span class="adr">
+                            <span class="street-address">{ cvData.address.streetAddress },</span><br></br>
+                            <span class="city">{ cvData.address.city },</span><br></br>
+                            <span class="county">{ cvData.address.County }</span><br></br>
+                        </span>
+                    </address>
                 <h2 ref="skills">Skills</h2>
-                <ul>
-                    <li>{ cvData.skills[0] }</li>
-                    <li>{ cvData.skills[1] }</li>
-                    <li>{ cvData.skills[2] }</li>
-                    <li>{ cvData.skills[3] }</li>
-                    <li>{ cvData.skills[4] }</li>
-                    <li>{ cvData.skills[5] }</li>
-                    <li>{ cvData.skills[6] }</li>
-                </ul>
+                <ul>{ skillList }</ul>
+                <h2 >Projects</h2>
                 <table>
                     <tr>
                         <th>Name</th>
                         <th>Details</th>
                         <th>Technology used</th>
                     </tr>
-                    <tr>
-                        <td>{ cvData.projects[0].name }</td>
-                        <td>{ cvData.projects[0].details }</td>
-                        <td>{ cvData.projects[0].technology }</td>
-                    </tr>
-                    <tr>
-                        <td>{ cvData.projects[1].name }</td>
-                        <td>{ cvData.projects[1].details }</td>
-                        <td>{ cvData.projects[1].technology }</td>
-                    </tr>
-                    <tr>
-                        <td>{ cvData.projects[2].name }</td>
-                        <td>{ cvData.projects[2].details }</td>
-                        <td>{ cvData.projects[2].technology }</td>
-                    </tr>
+                    {projectBody}
                 </table>
+                <h2>Experience</h2>
                 <table>
                     <tr>
                         <th>Company</th>
                         <th>Duration</th>
                         <th>Details</th>
                     </tr>
-                    <tr>
-                        <td>{ cvData.experience[0].company }</td>
-                        <td>{ cvData.experience[0].duration }</td>
-                        <td>{ cvData.experience[0].details }</td>
-                    </tr>
+                    { experienceBody }
                 </table>
             </div>
         )
