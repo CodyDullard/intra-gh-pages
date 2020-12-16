@@ -1,10 +1,11 @@
-import MyForm from"../components/Forms";
+import CompanyForm from "../components/Forms";
+import "../styles/main.css";
 
 function Company() {
     return (
-      <div>
+      <div id="job-display">
         <h2>Company</h2>
-        <MyForm />
+        <CompanyForm />
       </div>
     );
   }
