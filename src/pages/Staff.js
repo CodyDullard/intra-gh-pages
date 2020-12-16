@@ -1,3 +1,5 @@
+import Table from"../components/Table";
+
 function Staff() {
     return (
       <div>
