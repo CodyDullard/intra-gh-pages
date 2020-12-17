@@ -2,9 +2,9 @@ const data = [
     {
         "company": "Google",
         "company_contact_number": "0853422932",
-        "applied_students": ["John"],
+        "applied_students": ["John, ", "Jamie, ", "Tinh, ", "Matthew, ","Cody" ],
         "successful_placement": ["Jamie, ", "Tinh, ", "Matthew, ","Cody" ],
-        "description": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget commodo libero. Mauris congue consectetur vulputate. Maecenas magna dui, ultrices id fringilla ut, pulvinar eget ex. Aenean eu urna neque. Maecenas quis diam eu elit maximus consectetur eget et sem. Vivamus in purus dignissim, pharetra magna ut, vehicula urna. Pellentesque non bibendum nisl. Donec volutpat ornare eros id commodo. Cras ut venenatis massa, imperdiet pellentesque magna. "
+        "description": "Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another."
 
 
     },
@@ -12,15 +12,15 @@ const data = [
         "company": "Amazon",
         "company_contact_number": "0862498231",
         "applied_students": ["Michael, ", "Darragh"],
-        "successful_placement": [],
-        "description": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget commodo libero. Mauris congue consectetur vulputate. Maecenas magna dui, ultrices id fringilla ut, pulvinar eget ex. Aenean eu urna neque. Maecenas quis diam eu elit maximus consectetur eget et sem. Vivamus in purus dignissim, pharetra magna ut, vehicula urna. Pellentesque non bibendum nisl. Donec volutpat ornare eros id commodo. Cras ut venenatis massa, imperdiet pellentesque magna. "
+        "successful_placement": ["Darragh"],
+        "description": "Software Development Engineer (SDE) working for technology company which focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence."
     },
     {
         "company": "Demonware",
         "company_contact_number": "0872392123",
         "applied_students": ["Nicole"],
         "successful_placement": [],
-        "description": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget commodo libero. Mauris congue consectetur vulputate. Maecenas magna dui, ultrices id fringilla ut, pulvinar eget ex. Aenean eu urna neque. Maecenas quis diam eu elit maximus consectetur eget et sem. Vivamus in purus dignissim, pharetra magna ut, vehicula urna. Pellentesque non bibendum nisl. Donec volutpat ornare eros id commodo. Cras ut venenatis massa, imperdiet pellentesque magna. "
+		"description": "Demonware is an Irish software development company and a subsidiary of Activision Blizzard. Demonware's products enable games publishers to outsource their networking requirements, allowing them to concentrate on playability"
     }]
 
 export default data
