@@ -129,61 +129,59 @@ const columns = [
       sortable: false
   }
 ]
-const ExpandableComponent = ({ data }) => data.description;
+const ExpandableComponent = ({ data }) => <p >{ data.description }</p>;
 
 var now = Date.now()
 console.log(now)
 
 const conditionalRowStyles = [
-  {
-      when: row => toTime(row.final_date) < now,
-      style: {
-          backgroundColor: "rgb(255, 0, 0)",
-          color: "white"
-      }
-  },
-  {
-      when: row => applied(row.applied_students),
-      style: {
-          backgroundColor: "rgb(0, 255, 0)",
-          color: "white"
-      }
-  }
+    {
+        when: row => toTime(row.final_date) < now,
+        style: {
+            backgroundColor: "#FF652F",
+            color: "black"
+        }
+    },
+    {
+        when: row => applied(row.applied_students),
+        style: {
+            backgroundColor: "#14A76C",
+            color: "black"
+        }
+    }
 ]
 
 class Table extends React.Component {
-  render() {
-      return (
-          <div class="job-table" aria-label="Job Table" >
-              <DataTable
-              title="Jobs"
-              columns={columns}
-              data={data}
-              keyField="company"
-              expandableRows
-              highlightOnHover
-              expandableRowsHideExpander
-              expandOnRowClicked
-              defaultSortField="company"
-              expandableRowsComponent={<ExpandableComponent />}
-              conditionalRowStyles={conditionalRowStyles}
-          />
-        </div>
-      )
-  }
-  };
+    render() {
+        return (
+            <DataTable
+            title="Jobs"
+            columns={columns}
+            data={data}
+            keyField="company"
+            expandableRows
+            highlightOnHover
+            expandOnRowClicked
+            defaultSortField="company"
+            expandableRowsComponent={<ExpandableComponent />}
+            conditionalRowStyles={conditionalRowStyles}
+            theme="dark"
+        />
+        )
+    }
+    };
 
 function toTime(d) {
-  console.log(d.split("-"))
-  return new Date(d.split("-")).getTime()
+    console.log(d.split("-"))
+    return new Date(d.split("-")).getTime()
 }
 
 function applied(students) {
-  let student;
-  for(student of students) {
-      if(student === loggedStudent) {
-          return true
-      }
-  }
-  return false
+    let student;
+    for(student of students) {
+        if(student === loggedStudent) {
+            return true
+        }
+    }
+    return false
 }

@@ -1,5 +1,5 @@
 import { Component, React } from 'react';
-import data from "./testData"
+import data from "./testJobData"
 import DataTable from 'react-data-table-component';
 
 const loggedStudent = "test1"
@@ -29,7 +29,6 @@ const columns = [
 const ExpandableComponent = ({ data }) => <p >{ data.description }</p>;
 
 var now = Date.now()
-console.log(now)
 
 const conditionalRowStyles = [
     {
@@ -51,25 +50,29 @@ const conditionalRowStyles = [
 export default class Table extends Component {
     render() {
         return (
-            <DataTable
-            title="Jobs"
-            columns={columns}
-            data={data}
-            keyField="company"
-            expandableRows
-            highlightOnHover
-            expandOnRowClicked
-            defaultSortField="company"
-            expandableRowsComponent={<ExpandableComponent />}
-            conditionalRowStyles={conditionalRowStyles}
-            theme="dark"
-        />
+            <div>
+                <label for="search" class="visuallyhidden">Search jobs by keyword:  </label>
+                <input type="text" placeholder="Search by Jobs keyword" name="search" id="search" aria-placeholder="Search Jobs by Keyword"></input>
+                <br></br>
+                <DataTable
+                title="Jobs"
+                columns={columns}
+                data={data}
+                keyField="company"
+                expandableRows
+                highlightOnHover
+                expandOnRowClicked
+                defaultSortField="company"
+                expandableRowsComponent={<ExpandableComponent />}
+                conditionalRowStyles={conditionalRowStyles}
+                theme="dark"
+            />
+            </div>
         )
     }
     };
 
 function toTime(d) {
-    console.log(d.split("-"))
     return new Date(d.split("-")).getTime()
 }
 
