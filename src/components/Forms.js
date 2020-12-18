@@ -1,9 +1,8 @@
 /* eslint-disable */
 import React from 'react';
-import DataTable from 'react-data-table-component';
+import Table from"../components/Table";
 import "../styles/main.css";
 
-const loggedStudent = "test1"
 let text = "No data to display"
 
 export default class CompanyForm extends React.Component{ 
@@ -18,7 +17,7 @@ export default class CompanyForm extends React.Component{
     const { company, title, location, description, extra, courses, enddate} = this.state 
     event.preventDefault() 
     this.setState({submitted: true});
-    data.push({company: company, job_title: title, courses: courses.split(/(\s+)/), final_date: enddate, description: description, applied_students:[]})
+    data.push({company: company, job_title: title, courses: courses.split(/(\s+)/), final_date: enddate, description: description, applied_students:[], location: location, extra: extra})
     text = "Waiting for new entry."
   } 
   
@@ -97,11 +96,11 @@ export default class CompanyForm extends React.Component{
           /> 
         </div>
         <div> 
-          <button class="gradient-button">Add Job</button> 
+          <center><button class="gradient-button">Add Job</button></center>
         </div> 
       </form> 
 
-      {(this.state.submitted && <Table/>) || <h2><center>{text}</center></h2>} </div>
+      {(this.state.submitted && <Table data={ data } columns={ columns } expandComp = { <ExpandableComponent /> } />) || <h2><center>{text}</center></h2>} </div>
     ) 
   } 
 } 
@@ -133,57 +132,3 @@ const columns = [
 ]
 const ExpandableComponent = ({ data }) => <p >{ data.description }</p>;
 
-var now = Date.now()
-console.log(now)
-
-const conditionalRowStyles = [
-    {
-        when: row => toTime(row.final_date) < now,
-        style: {
-            backgroundColor: "#FF652F",
-            color: "black"
-        }
-    },
-    {
-        when: row => applied(row.applied_students),
-        style: {
-            backgroundColor: "#14A76C",
-            color: "black"
-        }
-    }
-]
-
-class Table extends React.Component {
-    render() {
-        return (
-            <DataTable
-            title="Jobs"
-            columns={columns}
-            data={data}
-            keyField="company"
-            expandableRows
-            highlightOnHover
-            expandOnRowClicked
-            defaultSortField="company"
-            expandableRowsComponent={<ExpandableComponent />}
-            conditionalRowStyles={conditionalRowStyles}
-            theme="dark"
-        />
-        )
-    }
-    };
-
-function toTime(d) {
-    console.log(d.split("-"))
-    return new Date(d.split("-")).getTime()
-}
-
-function applied(students) {
-    let student;
-    for(student of students) {
-        if(student === loggedStudent) {
-            return true
-        }
-    }
-    return false
-}
