@@ -3,6 +3,7 @@ import { Component, React } from 'react';
 import data from "./staffData"
 import DataTable from 'react-data-table-component';
 
+
 const loggedStudent = "test1"
 
 const columns = [
@@ -17,11 +18,6 @@ const columns = [
         sortable: false
     },
     {
-        name: "Student Applicants",
-        selector: "applied_students",
-        sortable: false
-    },
-    {
         name: "Send CV to Company"
     },
     {
@@ -33,7 +29,7 @@ const columns = [
 
 ]
 
-const ExpandableComponent = ({ data }) => <p >{ data.description }</p>;
+const ExpandableComponent = ({ data }) => <p >{ data.applied_students }</p>;
 
 
 export default class Table extends Component {
