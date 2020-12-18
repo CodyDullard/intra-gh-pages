@@ -105,3 +105,9 @@ table, th, td {
 label[for="labels"] {
     visibility: hidden;
 }
+
+.mytable {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1500px;
+}

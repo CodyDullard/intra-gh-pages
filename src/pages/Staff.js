@@ -7,7 +7,7 @@ function Staff() {
     return (
       <body>
         <section>
-          <div>
+          <div className = "mytable">
             <h2>Staff</h2>
             <StaffTable/>
           </div>
