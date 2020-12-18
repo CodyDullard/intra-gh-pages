@@ -1,7 +1,6 @@
 import { Component, React } from 'react';
 import data from "./testCvData"
 
-const loggedStudent = "test1"
 
 export default class CvViewer extends Component {
     render() {
@@ -64,13 +63,3 @@ export default class CvViewer extends Component {
         )
     }
     };
-
-// function makeSkills(dataList) {
-//     let ul = document.createElement("ul");
-//     this.MyRefs["skills"].appendChild(ul);
-//     dataList.forEach(element => {
-//         let li = document.createElement("li");
-//         ul.appendChild(li);
-//         li.innerHTML += element;
-//     });
-// }
