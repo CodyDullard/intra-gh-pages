@@ -1,4 +1,5 @@
-import { Component } from "react"
+/* eslint-disable */
+import { Component } from "react";
 import Table from"../components/Table";
 import "../styles/main.css";
 import CvViewer from "../components/Cv";
@@ -6,7 +7,7 @@ import CvViewer from "../components/Cv";
 
 function CvButton(props) {
   return (
-    <button onClick={props.onClick}>
+    <button class="gradient-button" onClick={props.onClick}>
       View Cv
     </button>
   )
@@ -14,7 +15,7 @@ function CvButton(props) {
 
 function JobsButton(props) {
   return (
-    <button onClick={props.onClick}>
+    <button class="gradient-button" onClick={props.onClick}>
       View Jobs
     </button>
   )

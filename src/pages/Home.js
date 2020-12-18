@@ -1,3 +1,4 @@
+/* eslint-disable */
 function Home() {
     return (
 	<body>
@@ -6,14 +7,18 @@ function Home() {
 				/*Login details below*/
 				<h2>Student Login</h2>
 				<form>
+				<label for='labels'>Student Number: </label> 
 				<input placeholder="Student Number" type="text" required/>
+				<label for='labels'>Password: </label>
 				<input placeholder="Password" type="password" required/>
 				<button class="gradient-button" type="button">login</button>
 				</form>
 
 				<h2>Company Login</h2>
 				<form>
+				<label for='labels'>Company ID: </label>
 				<input placeholder="Company ID" type="text" required/>
+				<label for='labels'>Password: </label>
 				<input placeholder="Password" type="password" required/>
 				<button class="gradient-button" type="button">login</button>
 				</form>
@@ -21,7 +26,9 @@ function Home() {
 
 				<h2>INTRA Office Login</h2>
 				<form>
+				<label for="labels">Username: </label>
 				<input placeholder="Username" type="text" required/>
+				<label for="labels">Password: </label>
 				<input placeholder="Password" type="password" required/>
 				<button class="gradient-button" type="button">login</button>
 				</form>

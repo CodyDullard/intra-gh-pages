@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 import { Component, React } from 'react';
 import data from "./staffData"
 import DataTable from 'react-data-table-component';
