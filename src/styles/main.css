@@ -34,7 +34,7 @@ h2, label {
     margin: auto;
 }
 
-input {
+input, textarea {
     width: 80%;
     padding: 10px 15px;
     margin-bottom: 20px;
@@ -49,11 +49,15 @@ input {
     margin: auto;
 }
 
-input:focus {
+input:focus, textarea:focus {
     background-color: white;
     color: #313131;
     outline: white solid 1px;
     border: #272727;
+}
+
+#text-field {
+    height: 400px;
 }
 
 address {

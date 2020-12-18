@@ -9,7 +9,6 @@ import CvViewer from "../components/Cv";
 
 // Job Table
 const loggedStudent = "test1"
-const jobData = data
 
 
 const columns = [
@@ -73,7 +72,7 @@ function applied(students) {
 // Conditional Rendering
 function CvButton(props) {
   return (
-    <button class="gradient-button" onClick={props.onClick}>
+    <button class="gradient-button" onClick={props.onClick} value="View Cv">
       View Cv
     </button>
   )
@@ -81,7 +80,7 @@ function CvButton(props) {
 
 function JobsButton(props) {
   return (
-    <button class="gradient-button" onClick={props.onClick}>
+    <button class="gradient-button" onClick={props.onClick} value="View Jobs">
       View Jobs
     </button>
   )
@@ -90,7 +89,7 @@ function JobsButton(props) {
 function ViewComp(props) {
   const curComp = props.curComp;
   if (curComp) {
-    return <Table data={ jobData } columns={ columns } expandComp = { <ExpandableComponent /> } rowStyles = { conditionalRowStyles }/>;
+    return <Table data={ data } columns={ columns } expandComp = { <ExpandableComponent /> } rowStyles = { conditionalRowStyles }/>;
   } else {
     return <CvViewer />;
   }
@@ -124,7 +123,7 @@ class Student extends Component{
       }
       return (
         <body>
-          <section>
+          <section tabIndex="0">
               <div title="Job section" aria-label="Job Section" id="job-display">
                 <h2>Student</h2>
                 { button }

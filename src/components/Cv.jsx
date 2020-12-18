@@ -26,7 +26,8 @@ export default class CvViewer extends Component {
         );
 
         return (
-            <div>
+            <>
+            <section class="cv-section" title="Current CV">
                 <h1>Curriculum Vitae</h1>
                 <h2>{ cvData.name }</h2>
                 <ul>
@@ -67,7 +68,19 @@ export default class CvViewer extends Component {
                     </tr>
                     { experienceBody }
                 </table>
-            </div>
+            </section>
+            <section class="cv-section">
+                <h2>Change Your Cv</h2>
+                <form>
+                    <label for="labels">Section to Change</label>
+                    <input type="text" name="Cv section to change" placeholder="Cv section to change"/>
+                    <label for="labels">What to Change</label>
+                    <textarea placeholder="What to change" id="text-field" name="What to change" />
+                    <button type="button" class="gradient-button" value="Submit">Submit</button>
+                </form>
+            </section>
+            </>
+            
         )
     }
     };
