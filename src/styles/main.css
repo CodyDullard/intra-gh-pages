@@ -106,13 +106,8 @@ label[for="labels"] {
     visibility: hidden;
 }
 
-<<<<<<< HEAD
 .mytable {
     margin-left: auto;
     margin-right: auto;
     width: 1550px;
-=======
-svg {
-    position: bottom;
->>>>>>> 27bb1a400ee4fd7bb23801633418b27208901411
 }
