@@ -6,9 +6,6 @@ export default class Table extends Component {
     render() {
         return (
             <div>
-                <label for="labels">Search jobs by keyword:  </label>
-                <input type="text" placeholder="Search by Jobs keyword" name="search" id="search" aria-placeholder="Search Jobs by Keyword"></input>
-                <br></br>
                 <DataTable
                 title="Jobs"
                 columns={this.props.columns}

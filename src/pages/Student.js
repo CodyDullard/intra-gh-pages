@@ -89,7 +89,13 @@ function JobsButton(props) {
 function ViewComp(props) {
   const curComp = props.curComp;
   if (curComp) {
-    return <Table data={ data } columns={ columns } expandComp = { <ExpandableComponent /> } rowStyles = { conditionalRowStyles }/>;
+    return(
+      <>
+      <label for="labels">Search jobs by keyword:  </label>
+      <input type="text" placeholder="Search by Jobs keyword" name="search" id="search" aria-placeholder="Search Jobs by Keyword"></input>
+      <br></br>
+      <Table data={ data } columns={ columns } expandComp = { <ExpandableComponent /> } rowStyles = { conditionalRowStyles }/>
+      </>);
   } else {
     return <CvViewer />;
   }
