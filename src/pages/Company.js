@@ -5,7 +5,7 @@ import "../styles/main.css";
 function Company() {
     return (
       <div id="job-display">
-        <h2>Company</h2>
+        <center><h2>Company Dashboard</h2></center>
         <CompanyForm />
       </div>
     );
