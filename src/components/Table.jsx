@@ -1,6 +1,7 @@
 import { Component, React } from 'react';
 import data from "./testJobData"
 import DataTable from 'react-data-table-component';
+import "../styles/main.css";
 
 const loggedStudent = "test1"
 
@@ -51,7 +52,7 @@ export default class Table extends Component {
     render() {
         return (
             <div>
-                <label for="search" class="visuallyhidden">Search jobs by keyword:  </label>
+                <label for="labels">Search jobs by keyword:  </label>
                 <input type="text" placeholder="Search by Jobs keyword" name="search" id="search" aria-placeholder="Search Jobs by Keyword"></input>
                 <br></br>
                 <DataTable

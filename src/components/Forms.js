@@ -1,5 +1,7 @@
+/* eslint-disable */
 import React from 'react';
 import DataTable from 'react-data-table-component';
+import "../styles/main.css";
 
 const loggedStudent = "test1"
 let text = "No data to display"
@@ -32,7 +34,7 @@ export default class CompanyForm extends React.Component{
       <div>
       <form onSubmit={this.handleSubmit}> 
         <div> 
-          <label htmlFor='company'>Company: </label> 
+          <label for='labels'>Company: </label> 
           <input  
             name='company'
             placeholder='Company' 
@@ -41,7 +43,7 @@ export default class CompanyForm extends React.Component{
           /> 
         </div> 
         <div> 
-          <label htmlFor='job title'>Job Tile: </label> 
+          <label for='labels'>Job Tile: </label> 
           <input 
             name='title' 
             placeholder='Job Tile'
@@ -50,7 +52,7 @@ export default class CompanyForm extends React.Component{
           /> 
         </div> 
         <div> 
-          <label htmlFor='location'>Location: </label> 
+          <label for='labels'>Location: </label> 
           <input 
             name='location' 
             placeholder='Location'
@@ -59,7 +61,7 @@ export default class CompanyForm extends React.Component{
           /> 
         </div> 
         <div> 
-          <label htmlFor='job description'>Job Description: </label> 
+          <label for='labels'>Job Description: </label> 
           <input 
             name='description' 
             placeholder='Job Description'
@@ -68,7 +70,7 @@ export default class CompanyForm extends React.Component{
           /> 
         </div> 
         <div> 
-          <label htmlFor='Extra Information'>Extra Information: </label> 
+          <label for='labels'>Extra Information: </label> 
           <input 
             name='extra' 
             placeholder='Extra Information'
@@ -77,7 +79,7 @@ export default class CompanyForm extends React.Component{
           /> 
         </div>
         <div> 
-          <label htmlFor='End Date'>End Date: </label> 
+          <label for='labels'>End Date: </label> 
           <input 
             name='enddate' 
             placeholder='End Date'
@@ -86,7 +88,7 @@ export default class CompanyForm extends React.Component{
           /> 
         </div>
         <div> 
-          <label htmlFor='Courses'>Courses: </label> 
+          <label for='labels'>Courses: </label> 
           <input 
             name='courses' 
             placeholder='Courses'
@@ -95,7 +97,7 @@ export default class CompanyForm extends React.Component{
           /> 
         </div>
         <div> 
-          <button>Add Job</button> 
+          <button class="gradient-button">Add Job</button> 
         </div> 
       </form> 
 

@@ -1,5 +1,7 @@
+/* eslint-disable */
 import { Component, React } from 'react';
-import data from "./testCvData"
+import data from "./testCvData";
+import "../styles/main.css";
 
 
 export default class CvViewer extends Component {
@@ -22,6 +24,7 @@ export default class CvViewer extends Component {
                 <td>{ element.details }</td>
             </tr>
         );
+
         return (
             <div>
                 <h1>Curriculum Vitae</h1>
@@ -41,6 +44,11 @@ export default class CvViewer extends Component {
                     </address>
                 <h2 ref="skills">Skills</h2>
                 <ul>{ skillList }</ul>
+                <h2>Socials</h2>
+                <ul>
+                    <li>Github:&nbsp;&nbsp;&nbsp;&nbsp;{ cvData.socials.Github }</li>
+                    <li>LinkIn:&nbsp;&nbsp;&nbsp;&nbsp;{ cvData.socials.LinkedIn }</li>
+                </ul>
                 <h2 >Projects</h2>
                 <table>
                     <tr>

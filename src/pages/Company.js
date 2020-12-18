@@ -1,3 +1,4 @@
+/* eslint-disable */
 import CompanyForm from "../components/Forms";
 import "../styles/main.css";
 

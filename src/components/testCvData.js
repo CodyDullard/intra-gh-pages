@@ -1,3 +1,4 @@
+/* eslint-disable */
 const data =
     {
         "name": "John Doe",
@@ -33,8 +34,13 @@ const data =
                 "duration":"10/01/2019 - 28/11/2020",
                 "details":"Worked as part of a team and dealt with customers on a daily basis."
             }
-         ]
+         ],
         
+        "socials":
+            {
+                "Github": "https://www.github.com/JohnDoe",
+                "LinkedIn": "https://www.linkedin.com/JohnDoe"
+            }
    }
 
 
