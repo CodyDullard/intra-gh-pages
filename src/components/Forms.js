@@ -34,10 +34,10 @@ export default class CompanyForm extends React.Component{
       <div>
       <form onSubmit={this.handleSubmit}> 
         <div> 
-          <label for='labels'>Company: </label> 
+          <label for='labels'>Company Name: </label> 
           <input  
             name='company'
-            placeholder='Company' 
+            placeholder='Company Name' 
             value = {this.state.company} 
             onChange={this.handleChange} 
           /> 
@@ -61,19 +61,19 @@ export default class CompanyForm extends React.Component{
           /> 
         </div> 
         <div> 
-          <label for='labels'>Job Description: </label> 
+          <label for='labels'>About Company: </label> 
           <input 
             name='description' 
-            placeholder='Job Description'
+            placeholder='About Company'
             value={this.state.description} 
             onChange={this.handleChange} 
           /> 
         </div> 
         <div> 
-          <label for='labels'>Extra Information: </label> 
+          <label for='labels'>Skills Required: </label> 
           <input 
             name='extra' 
-            placeholder='Extra Information'
+            placeholder='Skills Required'
             value={this.state.extra} 
             onChange={this.handleChange} 
           /> 

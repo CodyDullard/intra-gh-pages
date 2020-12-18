@@ -14,7 +14,7 @@ const data =
         "projects":[
            {
                "name":"Cracking a Substitution Cipher",
-               "details":"Wrote a script which would write the key to subsstitution cipher to a file given an encoded piece of text.",
+               "details":"Wrote a script which would write the key to substitution cipher to a file given an encoded piece of text.",
                 "technology":"Python"
            },
            {
