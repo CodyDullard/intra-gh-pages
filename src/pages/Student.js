@@ -2,9 +2,75 @@
 import { Component } from "react";
 import Table from"../components/Table";
 import "../styles/main.css";
+import data from "../components/testJobData";
 import CvViewer from "../components/Cv";
 
 
+
+// Job Table
+const loggedStudent = "test1"
+const jobData = data
+
+
+const columns = [
+    {
+        name: "Company",
+        selector: "company",
+        sortable: false
+    },
+    {
+        name: "Job Title",
+        selector: "job_title",
+        sortable: false
+    },
+    {
+        name: "Courses",
+        selector: "courses",
+        sortable: false
+    },
+    {
+        name: "Final Date",
+        selector: "final_date",
+        sortable: false
+    }
+]
+const ExpandableComponent = ({ data }) => <p >{ data.description }</p>;
+
+var now = Date.now()
+
+const conditionalRowStyles = [
+    {
+        when: row => toTime(row.final_date) < now,
+        style: {
+            backgroundColor: "#FF652F",
+            color: "black"
+        }
+    },
+    {
+        when: row => applied(row.applied_students),
+        style: {
+            backgroundColor: "#14A76C",
+            color: "black"
+        }
+    }
+]
+
+function toTime(d) {
+  return new Date(d.split("-")).getTime()
+}
+
+function applied(students) {
+  let student;
+  for(student of students) {
+      if(student === loggedStudent) {
+          return true
+      }
+  }
+  return false
+}
+
+
+// Conditional Rendering
 function CvButton(props) {
   return (
     <button class="gradient-button" onClick={props.onClick}>
@@ -23,14 +89,15 @@ function JobsButton(props) {
 
 function ViewComp(props) {
   const curComp = props.curComp;
-  console.log(curComp)
   if (curComp) {
-    return <Table />;
+    return <Table data={ jobData } columns={ columns } expandComp = { <ExpandableComponent /> } rowStyles = { conditionalRowStyles }/>;
   } else {
     return <CvViewer />;
   }
 }
 
+
+// Main
 class Student extends Component{
     constructor(props) {
       super(props);
