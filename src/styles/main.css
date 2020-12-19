@@ -28,6 +28,10 @@ h2, label {
     color: #e7e6de;
 }
 
+h4, label {
+    color: #e7e6de;
+}
+
 #job-display{
     width: 80%;
     display: table;

@@ -13,7 +13,7 @@ function Home() {
 				<input placeholder="Password" type="password" required/>
 				<button class="gradient-button" type="button">login</button>
 				</form>
-
+	
 				<h2>Company Login</h2>
 				<form>
 				<label for='labels'>Company ID: </label>
@@ -31,6 +31,11 @@ function Home() {
 				<label for="labels">Password: </label>
 				<input placeholder="Password" type="password" required/>
 				<button class="gradient-button" type="button">login</button>
+				</form>
+				
+				
+				
+				<form>
 				</form>
 			</div>
 
