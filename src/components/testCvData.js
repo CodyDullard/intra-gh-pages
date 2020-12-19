@@ -36,9 +36,9 @@ const data =
             },
 			
 			{
-                "company":"",
-                "duration":"",
-                "details":""
+                "company":"Computer store",
+                "duration":"1/1/2019 - 1/6/2019",
+                "details":"Repairing hardware and software on a regular basis."
             }
 			
 			
