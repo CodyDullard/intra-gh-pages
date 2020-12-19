@@ -65,9 +65,11 @@ export default class CvViewer extends Component {
                         <th>Company</th>
                         <th>Duration</th>
                         <th>Details</th>
+
                     </tr>
                     { experienceBody }
                 </table>
+                
             </section>
             <section class="cv-section">
                 <h2>Change Your Cv</h2>
