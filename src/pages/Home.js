@@ -34,6 +34,15 @@ function Home() {
 				</form>
 				
 				
+
+				
+				
+				<div id="Location">
+			
+				  <p>Contact : intra@dcu.ie</p>
+				  <div id="MapID"></div>
+				</div>
+				
 				
 				<form>
 				</form>

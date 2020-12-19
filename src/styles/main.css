@@ -32,6 +32,19 @@ h4, label {
     color: #e7e6de;
 }
 
+
+h5, label {
+    color: #e7e6de;
+	position:absolute;
+
+}
+
+p, label {
+    color: #e7e6de;
+	position:absolute;
+
+}
+
 #job-display{
     width: 80%;
     display: table;
