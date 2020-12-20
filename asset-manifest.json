@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/intra-gh-pages/static/css/main.7ed6caba.chunk.css",
+    "main.js": "/intra-gh-pages/static/js/main.6e1dfb52.chunk.js",
+    "main.js.map": "/intra-gh-pages/static/js/main.6e1dfb52.chunk.js.map",
+    "runtime-main.js": "/intra-gh-pages/static/js/runtime-main.80c1430b.js",
+    "runtime-main.js.map": "/intra-gh-pages/static/js/runtime-main.80c1430b.js.map",
+    "static/js/2.84f16500.chunk.js": "/intra-gh-pages/static/js/2.84f16500.chunk.js",
+    "static/js/2.84f16500.chunk.js.map": "/intra-gh-pages/static/js/2.84f16500.chunk.js.map",
+    "index.html": "/intra-gh-pages/index.html",
+    "static/css/main.7ed6caba.chunk.css.map": "/intra-gh-pages/static/css/main.7ed6caba.chunk.css.map",
+    "static/js/2.84f16500.chunk.js.LICENSE.txt": "/intra-gh-pages/static/js/2.84f16500.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.80c1430b.js",
+    "static/js/2.84f16500.chunk.js",
+    "static/css/main.7ed6caba.chunk.css",
+    "static/js/main.6e1dfb52.chunk.js"
+  ]
+}
