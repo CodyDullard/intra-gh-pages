@@ -15,7 +15,7 @@ import Navigation from './components/Navigation';
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/">
       <div>
         <Navigation/>
         <Switch>
