@@ -41,7 +41,7 @@ function getSkills(data) {
   return skills
 }
 
-const ExpandableComponent = ({ data }) => <> <h3>Skills Needed</h3> { getSkills(data) } <h3>Description</h3> <p>{data.description}</p></> ;
+const ExpandableComponent = ({ data }) => <> <h3>Skills Needed</h3> <ul>{ getSkills(data) }</ul> <h3>Description</h3> <p>{data.description}</p></> ;
 
 var now = Date.now()
 
