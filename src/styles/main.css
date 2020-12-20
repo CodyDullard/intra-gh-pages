@@ -1,3 +1,4 @@
+/* --------------- SCROLL BAR ----------------*/
 /* width */
 ::-webkit-scrollbar {
     width: 20px;
@@ -20,11 +21,12 @@
     background: #b30000; 
 }
 
+/* -------------- STYLING AND BODY -------------- */
 body {
     background-color: #100e17;
 }
 
-h2, label {
+h1, h2, label {
     color: #e7e6de;
 }
 
@@ -84,6 +86,15 @@ li {
     color: white;
 }
 
+label[for="labels"] {
+    visibility: hidden;
+}
+
+svg {
+    position: bottom;
+}
+
+/* --------------- TABLE AND BUTTON STYLING ----------------*/
 table {
     color: white;
 }
@@ -121,9 +132,6 @@ table, th, td {
     border: 1px solid white;
 }
 
-label[for="labels"] {
-    visibility: hidden;
-}
 
 .mytable {
     margin-left: auto;
@@ -131,7 +139,41 @@ label[for="labels"] {
     width: 1550px;
 }
 
+/* --------------- NAVIGATION BAR --------------- */
 
-svg {
-    position: bottom;
-}
+    
+  nav {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    overflow: hidden;
+    background-color: #08070C;
+    font-size: 20.8px;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    list-style-type: none;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 1.5em 2em 1.5em 2em;
+    text-decoration: none;
+    color: #e7e6de;
+  }
+  
+  nav ul li a:hover {
+    background-color: #bdbdbd;
+    color: white;
+    background-image: linear-gradient(to right, red, #f06d06);
+  }
+  
+  nav ul li:first-child {
+    padding: 0 2em 0 2em;
+    margin-right: auto;
+  }
