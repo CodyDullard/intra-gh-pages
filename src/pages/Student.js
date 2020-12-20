@@ -5,11 +5,8 @@ import "../styles/main.css";
 import data from "../components/testJobData";
 import CvViewer from "../components/Cv";
 
-
-
 // Job Table
 const loggedStudent = "test1"
-
 
 const columns = [
     {
