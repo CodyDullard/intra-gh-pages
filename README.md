@@ -1,6 +1,6 @@
 ## Information
 
-This application is just the UI element and does not feature any backend. A live demo can be found @ URL.
+This application is just the UI element and does not feature any backend. A live demo can be found @ https://codydullard.github.io/intra-gh-pages/.
 
 ## Deploying
 
